@@ -110,11 +110,13 @@ watch(user, () => {
   resize: none;
 }
 
-.chat-input .textarea::-webkit-scrollbar {
+.chat-input .textarea::-webkit-scrollbar,
+.chat-wrapper::-webkit-scrollbar {
   display: none;
 }
 
-.chat-input .textarea {
+.chat-input .textarea,
+.chat-wrapper {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
