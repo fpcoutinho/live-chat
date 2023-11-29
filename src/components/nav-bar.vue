@@ -3,17 +3,32 @@
     <div class="flex-1">
       <span class="btn btn-ghost text-xl">Fux.ico</span>
     </div>
+    <!-- v-if="props.user" no div abaixo -->
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
-        <li><router-link :to="{ name: 'Welcome' }">Home</router-link></li>
-        <li><router-link :to="{ name: 'Chatroom' }">Chat</router-link></li>
+        <li><span>Hello, user</span></li>
+        <li><button type="button" @click="signout">Logout</button></li>
       </ul>
     </div>
   </header>
 </template>
 
-<style>
-header a.router-link-active {
-  @apply text-accent;
+<script setup>
+import useLogout from '../composables/useLogout'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const { logout, error } = useLogout()
+
+const signout = async () => {
+  await logout()
+  if (!error.value) {
+    router.push({ name: 'Welcome' })
+  }
 }
-</style>
+
+const props = defineProps({
+  user: Object
+})
+</script>

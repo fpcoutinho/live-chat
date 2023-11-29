@@ -46,6 +46,8 @@
 import { ref, computed } from 'vue'
 import useSignup from '../composables/useSignup'
 
+const emit = defineEmits(['signup'])
+
 const { error, signup } = useSignup()
 
 const displayName = ref('')
@@ -58,5 +60,8 @@ const passwordError = computed(() => {
 
 const register = async () => {
   await signup(email.value, password.value, displayName.value)
+  if (!error.value) {
+    emit('signup')
+  }
 }
 </script>
