@@ -1,9 +1,7 @@
 <template>
-  <header
-    class="navbar bg-base-100 fixed top-0 p-0 xl:px-20 w-full overflow-hidden z-10"
-  >
+  <header class="navbar bg-base-100 fixed top-0 p-0 xl:px-20 w-full overflow-hidden z-10">
     <div class="flex-1">
-      <span class="btn btn-ghost text-xl">Live Chat</span>
+      <span class="btn btn-ghost text-xl">Fux.ico</span>
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
@@ -15,7 +13,7 @@
 </template>
 
 <style>
-  header a.router-link-active {
-    @apply text-accent;
-  }
+header a.router-link-active {
+  @apply text-accent;
+}
 </style>
