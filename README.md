@@ -1,4 +1,4 @@
-# live-chat
+# Fux.ico
 
 Live chat using vue3 and firebase.
 

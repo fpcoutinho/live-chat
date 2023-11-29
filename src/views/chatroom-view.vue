@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <h1>Chat</h1>
 </template>
 
 <script setup></script>

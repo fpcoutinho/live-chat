@@ -6,7 +6,7 @@
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
         <li><router-link :to="{ name: 'Welcome' }">Home</router-link></li>
-        <li><router-link :to="{ name: 'Chat' }">Chat</router-link></li>
+        <li><router-link :to="{ name: 'Chatroom' }">Chat</router-link></li>
       </ul>
     </div>
   </header>
