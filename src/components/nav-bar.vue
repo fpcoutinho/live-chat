@@ -3,10 +3,9 @@
     <div class="flex-1">
       <span class="btn btn-ghost text-xl">Fux.ico</span>
     </div>
-    <!-- v-if="props.user" no div abaixo -->
-    <div class="flex-none">
+    <div v-if="props.user" class="flex-none">
       <ul class="menu menu-horizontal px-1">
-        <li><span>Hello, user</span></li>
+        <li><span>Hello, {{ user.displayName }}!</span></li>
         <li><button type="button" @click="signout">Logout</button></li>
       </ul>
     </div>
