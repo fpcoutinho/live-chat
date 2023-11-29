@@ -1,6 +1,6 @@
 <template>
   <header
-    class="navbar bg-base-100 fixed top-0 xl:px-20 w-full overflow-hidden z-10"
+    class="navbar bg-base-100 fixed top-0 p-0 xl:px-20 w-full overflow-hidden z-10"
   >
     <div class="flex-1">
       <span class="btn btn-ghost text-xl">Live Chat</span>

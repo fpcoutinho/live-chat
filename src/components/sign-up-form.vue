@@ -67,6 +67,9 @@
 
 <script setup>
   import { ref, computed } from 'vue'
+  import useSignup from '../composables/useSignup'
+
+  const { error, signup } = useSignup()
 
   const displayName = ref('')
   const email = ref('')
@@ -76,11 +79,7 @@
     if (password.value !== password2.value) return 'Passwords do not match!'
   })
 
-  const register = () => {
-    console.log('name: ', displayName.value)
-    console.log('email: ', email.value)
-    console.log('password: ', password.value)
-    console.log('confirm password: ', password2.value)
-    console.log('password verify: ', passwordError)
+  const register = async () => {
+    await signup(email.value, password.value, displayName.value)
   }
 </script>
