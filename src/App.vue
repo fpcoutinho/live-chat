@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <main>
+  <main class="prose prose-slate max-w-none">
     <RouterView />
   </main>
 </template>
