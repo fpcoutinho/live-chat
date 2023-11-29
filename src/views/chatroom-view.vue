@@ -1,8 +1,8 @@
 <template>
   <h1>Chatroom</h1>
-  <div class="chat-window mt-4">
+  <div class="chat-window p-2 mt-4">
     <div class="chat-wrapper pr-2">
-      <div class="chat chat-start">
+      <div class="chat chat-start md:chat-xs">
         <div class="chat-header">
           Obi-Wan Kenobi
           <time class="text-xs opacity-50">2 hours ago</time>
@@ -102,7 +102,7 @@ watch(user, () => {
 }
 
 .chat-wrapper {
-  height: 33rem;
+  height: 32rem;
   overflow: auto;
 }
 
