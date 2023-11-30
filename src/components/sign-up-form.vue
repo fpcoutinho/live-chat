@@ -48,7 +48,7 @@ import useSignup from '../composables/useSignup'
 
 const emit = defineEmits(['signup'])
 
-const { error, signup } = useSignup()
+const { signup, error, isPending } = useSignup()
 
 const displayName = ref('')
 const email = ref('')

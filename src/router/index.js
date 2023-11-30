@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import {projectAuth} from '../firebase/config'
+import {auth} from '../firebase/config'
 
 const requireAuth = (to, from, next) => {
-  let user = projectAuth.currentUser
+  let user = auth.currentUser
   if (!user) {
     next({ name: 'Welcome' })
   } else {
@@ -11,7 +11,7 @@ const requireAuth = (to, from, next) => {
 }
 
 const requireNoAuth = (to, from, next) => {
-  let user = projectAuth.currentUser
+  let user = auth.currentUser
   if (user) {
     next({ name: 'Chatroom' })
   } else {

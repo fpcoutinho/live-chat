@@ -31,7 +31,7 @@ const emit = defineEmits(['login'])
 
 const email = ref('')
 const password = ref('')
-const { login, error } = useLogin()
+const { login, error, isPending } = useLogin()
 
 const signin = async () => {
   await login(email.value, password.value)

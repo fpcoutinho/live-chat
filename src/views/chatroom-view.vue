@@ -46,7 +46,7 @@ import { formatDistanceToNow } from 'date-fns'
 
 const router = useRouter()
 const { user } = getUser()
-const { addDoc, error } = useCollection('messages')
+const { addDocument, error } = useCollection('messages')
 const { documents, getError } = getCollection('messages')
 
 watch(user, () => {
@@ -69,7 +69,7 @@ const sendMessage = async () => {
     createdAt: timestamp(),
   }
 
-  await addDoc(msg)
+  await addDocument(msg)
   if (!error.value) {
     message.value = ''
   }
