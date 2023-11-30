@@ -2,7 +2,7 @@
   <h1>Chatroom</h1>
   <div class="chat-window p-2 mt-4">
     <span v-if="getError" class="text-error">{{ getError }}</span>
-    <div v-if="documents" class="chat-wrapper pr-2">
+    <div v-if="documents" class="chat-wrapper pr-2" ref="messages">
       <div v-for="doc in documents" :key="doc.id">
         <div v-if="doc.userEmail === user.email" class="chat chat-end md:chat-xs">
           <div class="chat-header">
@@ -39,7 +39,7 @@
 import getUser from '../composables/getUser'
 import useCollection from '../composables/useCollection'
 import getCollection from '../composables/getCollection'
-import { watch, ref } from 'vue'
+import { watch, ref, onUpdated } from 'vue'
 import { useRouter } from 'vue-router'
 import { timestamp } from '../firebase/config'
 import { formatDistanceToNow } from 'date-fns'
@@ -74,6 +74,13 @@ const sendMessage = async () => {
     message.value = ''
   }
 }
+
+// Scroll to bottom of chat window
+const messages = ref(null)
+
+onUpdated(() => {
+  messages.value.scrollTop = messages.value.scrollHeight
+})
 </script>
 
 <style>
