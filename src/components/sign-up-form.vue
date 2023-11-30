@@ -40,6 +40,9 @@
       </button>
     </div>
   </form>
+  <dialog v-if="isPending" class="modal loading-modal" open>
+    <span class="loading loading-spinner loading-lg text-primary"></span>
+  </dialog>
 </template>
 
 <script setup>

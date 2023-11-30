@@ -21,10 +21,11 @@ const router = useRouter()
 const { logout, error } = useLogout()
 
 const signout = async () => {
-  await logout()
-  if (!error.value) {
-    router.push({ name: 'Welcome' })
-  }
+  logout().then(() => {
+    if (!error.value) {
+      router.push({ name: 'Welcome' })
+    }
+  })
 }
 
 const props = defineProps({

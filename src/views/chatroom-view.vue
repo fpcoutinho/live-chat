@@ -4,7 +4,7 @@
     <span v-if="getError" class="text-error">{{ getError }}</span>
     <div v-if="documents" class="chat-wrapper pr-2" ref="messages">
       <div v-for="doc in documents" :key="doc.id">
-        <div v-if="doc.userEmail === user.email" class="chat chat-end md:chat-xs">
+        <div v-if="user && doc.userEmail === user.email" class="chat chat-end md:chat-xs">
           <div class="chat-header">
             {{ doc.name }}
             <time class="text-xs opacity-50">{{ formattedDate(doc.createdAt) }}</time>
@@ -40,9 +40,9 @@ import getUser from '../composables/getUser'
 import useCollection from '../composables/useCollection'
 import getCollection from '../composables/getCollection'
 import { watch, ref, onUpdated } from 'vue'
-import { useRouter } from 'vue-router'
 import { timestamp } from '../firebase/config'
 import { formatDistanceToNow } from 'date-fns'
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const { user } = getUser()

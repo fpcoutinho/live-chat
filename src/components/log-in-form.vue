@@ -21,6 +21,9 @@
       <button class="btn btn-primary" type="submit">Log in</button>
     </div>
   </form>
+  <dialog v-if="isPending" class="modal loading-modal" open>
+    <span class="loading loading-spinner loading-lg text-primary"></span>
+  </dialog>
 </template>
 
 <script setup>
